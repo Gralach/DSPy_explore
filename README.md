@@ -1,4 +1,4 @@
-# prompt_tuning
+# DSPY Exploration
 This repository is created to learn how to use DSPy for prompt tuning purposes
 
 1. Classification Fine-tuning
