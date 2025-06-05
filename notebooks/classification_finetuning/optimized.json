@@ -1,0 +1,64 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "text": "When will a cash withdrawal show up?",
+        "reasoning": "Not supplied for this particular example.",
+        "label": "pending_cash_withdrawal"
+      },
+      {
+        "text": "The exchange rate from my card payment isn't right.",
+        "label": "card_payment_wrong_exchange_rate"
+      },
+      {
+        "text": "How long before I can see that my cash withdrawal has taken place?",
+        "label": "pending_cash_withdrawal"
+      },
+      {
+        "text": "The exchange rate I was charged for a purchase was not right.",
+        "label": "card_payment_wrong_exchange_rate"
+      }
+    ],
+    "signature": {
+      "instructions": "You are a customer support assistant specializing in card services. Given a customer inquiry, classify the inquiry into one of the following categories: `card_arrival`, `exchange_rate`, `transaction_status`, or `lost_found_card`. Provide the label based on the customer's question.",
+      "fields": [
+        {
+          "prefix": "Text:",
+          "description": "${text}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Label:",
+          "description": "${label}"
+        }
+      ]
+    },
+    "lm": {
+      "model": "ollama_chat\/gemma3:4b-it-qat",
+      "model_type": "chat",
+      "cache": true,
+      "cache_in_memory": true,
+      "num_retries": 3,
+      "finetuning_model": null,
+      "launch_kwargs": {},
+      "train_kwargs": {},
+      "temperature": 0.0,
+      "max_tokens": 4000,
+      "api_base": "http:\/\/localhost:11434",
+      "api_key": ""
+    }
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}
